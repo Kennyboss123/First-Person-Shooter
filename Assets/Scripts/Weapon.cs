@@ -36,6 +36,7 @@ public class Weapon : MonoBehaviour
     public Vector3 spawnPosition;
     public Vector3 spawnRotation;
 
+    bool isADS;
     public enum ShootingMode
     {
         Single,
@@ -57,6 +58,7 @@ public class Weapon : MonoBehaviour
         burstBulletsLeft = bulletsPerBurst;
         animator = GetComponent<Animator>();
 
+        bulletsLeft = magazineSize;
     }
 
     // Update is called once per frame
@@ -64,6 +66,20 @@ public class Weapon : MonoBehaviour
     {
         if (isActiveWeapon)
         {
+            if (Input.GetMouseButtonDown(0))
+            {
+                isADS = true;
+                animator.SetTrigger("EnterADS");
+                HUDManager.Instance.middlePoint.SetActive(false);
+            }
+
+            if(Input.GetMouseButtonUp(0))
+            {
+                isADS = false;
+                animator.SetTrigger("ExitADS");
+                HUDManager.Instance.middlePoint.SetActive(true);
+            }
+
             GetComponent<Outline>().enabled = false;
             if (currentShootingMode == ShootingMode.Auto) // Holding down X key continously
             {
@@ -98,13 +114,23 @@ public class Weapon : MonoBehaviour
     {
         bulletsLeft--;
 
-        // muzzleEffect.GetComponent<ParticleSystem>().Play();
-        animator.SetTrigger("RECOIL");
+        //muzzleEffect.GetComponent<ParticleSystem>().Play();
+        if (isADS)
+        {
+            animator.SetTrigger("RecoilADSpistol");
+        }
+        else
+        {
+            animator.SetTrigger("RECOIL");
+        }
 
         readyToShoot = false; // so it doesnt shoot twice at once
         Vector3 shootingDirection = CalculateDirectionAndSpread().normalized;
 
         GameObject bullet = Instantiate(bulletPrefab, spawnBullet.position, spawnBullet.rotation);
+        Debug.Log(spawnBullet.name);
+        Debug.Log(spawnBullet.position);
+        Debug.Log(spawnBullet.parent.name);
         SoundManager.Instance.PlayShootingSound(thisWeaponModel);
 
         bullet.transform.forward = shootingDirection;

@@ -18,6 +18,7 @@ public class HUDManager : MonoBehaviour
     public Image activeWeaponUI;
     public Image inActiveWeaponUI;
 
+    public GameObject middlePoint;
     private void Awake()
     {
         if (Instance == null)
@@ -55,10 +56,10 @@ public class HUDManager : MonoBehaviour
         switch(model)
         {
             case Weapon.WeaponModel.Pistol:
-                return Instantiate(Resources.Load<GameObject>("PistolWeapon")).GetComponent<SpriteRenderer>().sprite;
+                //return Instantiate(Resources.Load<GameObject>("PistolWeapon")).GetComponent<SpriteRenderer>().sprite;
 
             case Weapon.WeaponModel.M16:
-                return Instantiate(Resources.Load<GameObject>("M16Weapon")).GetComponent<SpriteRenderer>().sprite;
+                //return Instantiate(Resources.Load<GameObject>("M16Weapon")).GetComponent<SpriteRenderer>().sprite;
 
             default:
                 return null;
@@ -69,10 +70,10 @@ public class HUDManager : MonoBehaviour
         switch (model)
         {
             case Weapon.WeaponModel.Pistol:
-                return Instantiate(Resources.Load<GameObject>("PistolAmmo")).GetComponent<SpriteRenderer>().sprite;
+                //return Instantiate(Resources.Load<GameObject>("PistolAmmo")).GetComponent<SpriteRenderer>().sprite;
 
             case Weapon.WeaponModel.M16:
-                return Instantiate(Resources.Load<GameObject>("M16Ammo")).GetComponent<SpriteRenderer>().sprite;
+                //return Instantiate(Resources.Load<GameObject>("M16Ammo")).GetComponent<SpriteRenderer>().sprite;
 
             default:
                 return null;

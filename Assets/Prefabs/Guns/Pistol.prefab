@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4208950867437865613}
   - component: {fileID: 380650289898384652}
   - component: {fileID: 2302570070279404954}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Weapon_01_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 4907306456848624080}
   - component: {fileID: 6015711339425193300}
   - component: {fileID: 153188320926057771}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Weapon_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 5772739958268282743}
   - component: {fileID: 5942368749257714501}
   - component: {fileID: 2912785158124466246}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Weapon_01_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 8900310584845653425}
   - component: {fileID: 4965438260346122076}
   - component: {fileID: 779508679}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +317,7 @@ Transform:
   m_GameObject: {fileID: 4570175710593402635}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.1304, y: 0.545, z: 0.663}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1546297379454719996}
   - {fileID: 4205620366676571662}
@@ -361,17 +361,16 @@ MonoBehaviour:
   spreadIntensity: 0.005
   reloadingTime: 1.5
   bulletsLeft: 0
-  bulletsCapacity: 0
   magazineSize: 7
   isReloading: 0
-  bulletPrefab: {fileID: 8020543430711654834, guid: 19cc638283fc98b43ac0f7de8da949c2, type: 3}
+  bulletPrefab: {fileID: 3731272504020194484, guid: 0fe5a65b678c7e04496ac836313471ca, type: 3}
   spawnBullet: {fileID: 8900310584751995794}
   bulletSpeed: 500
   muzzleEffect: {fileID: 5500036297391061481, guid: 92afaae8abbfa5145aac7ea76f19367d, type: 3}
-  spawnPosition: {x: 0.1, y: 0.12, z: 0.532}
+  spawnPosition: {x: 0.1, y: 0.03, z: 0.532}
   spawnRotation: {x: 0, y: 90, z: 0}
   currentShootingMode: 0
-  thisWeapon: 0
+  thisWeaponModel: 0
 --- !u!95 &4965438260346122076
 Animator:
   serializedVersion: 3
@@ -421,7 +420,7 @@ GameObject:
   - component: {fileID: 5975672031153388518}
   - component: {fileID: 7441885054538865457}
   - component: {fileID: 1478196721142197799}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Weapon_01_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8900310584751995794}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

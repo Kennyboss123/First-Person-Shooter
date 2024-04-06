@@ -32,7 +32,6 @@ public class SoundManager : MonoBehaviour
         {
             case WeaponModel.Pistol:
                 pistolShootingClip.Play();
-                Debug.Log(weapon.ToString());
                 break;
 
             case WeaponModel.M16:
